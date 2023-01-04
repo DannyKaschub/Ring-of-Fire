@@ -8,11 +8,17 @@
 
 
     <div class="card_stack">
+        <!--cardstack-->
         <img *ngFor="let c of [0,1,2,3]; let i = index;" [ngStyle]="{'right.px' : i * 5}"
             src="/assets/img/playing_cards/card_cover.png">
         <img (click)="takeCard()" class="top_card" style="right: 25px;" 
         src="/assets/img/playing_cards/card_cover.png">
+        <!--played cardstack-->
+        <img *ngFor="let card of game.playedCards" class="played_card" src="/assets/img/playing_cards/{{ card }}.png" alt="">
+        <!--card animation flying-->
         <img (click)="takeCard()" *ngIf="pickCardAnimation" class="pick_card" style="right: 25px;" 
-        src="/assets/img/playing_cards/ace_1.png">
+        src="/assets/img/playing_cards/{{ currentCard }}.png">
+
+        
     </div>
 </div>
