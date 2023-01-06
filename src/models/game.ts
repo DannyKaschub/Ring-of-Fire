@@ -1,5 +1,5 @@
 export class Game {
-    public players: string[] = ['Hans', 'Jürgen', 'Hildegard'];
+    public players: string[] = [];
     public stack: string[] = [];
     public playedCards: string[] = [];
     public currentPlayer: number = 0;
@@ -12,13 +12,8 @@ export class Game {
             this.stack.push('hearts_' + i);
         }
         shuffle(this.stack);
-
     }
 }
-
-
-
-
 
 function shuffle(array: any) {
     let currentIndex = array.length,  randomIndex;
