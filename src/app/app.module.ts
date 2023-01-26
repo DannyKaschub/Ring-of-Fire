@@ -16,6 +16,10 @@ import { GameInfoComponent } from './game-info/game-info.component';
 import {MatCardModule} from '@angular/material/card';
 import { PlayerMobileComponent } from './player-mobile/player-mobile.component';
 
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { environment } from './environments/environment';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +39,10 @@ import { PlayerMobileComponent } from './player-mobile/player-mobile.component';
     BrowserAnimationsModule,
     FormsModule,
     MatInputModule,
-    MatCardModule
+    MatCardModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
